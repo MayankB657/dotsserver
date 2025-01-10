@@ -417,15 +417,15 @@
     var support_facelogin = false;
     var base_url = "{{ url('/') }}";
     $(window).on("pageshow", function(event) {
-        $.ajax({
-            type: "GET",
-            url: "{{ route('dashboard') }}",
-            success: function(response) {
-                if (response.statusCode != 401) {
-                    window.location.href = "{{ route('dashboard') }}";
-                }
-            }
-        });
+        // $.ajax({
+        //     type: "GET",
+        //     url: "{{ route('dashboard') }}",
+        //     success: function(response) {
+        //         if (response.statusCode != 401) {
+        //             window.location.href = "{{ route('dashboard') }}";
+        //         }
+        //     }
+        // });
     });
     $(document).ready(function() {
         $.cookie.raw = true;
