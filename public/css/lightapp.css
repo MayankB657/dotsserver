@@ -1,0 +1,62 @@
+.lightapp-container {
+  height: calc(100% - 56px);
+}
+
+.lightapp-sidebar {
+  background-image: url("/public/images/sidebarimg.png");
+}
+
+li:hover {
+  color: orange;
+}
+
+.lightapp-content {
+  height: calc(100% - 112px);
+}
+
+.lightapp-yellowbar {
+  background-image: url("/public/images/Yellowbar.png");
+}
+
+.right-container {
+  background-image: url("/public/images/Rectanglebg.png");
+}
+
+.lightapp-btn {
+  color: rgb(236, 214, 19);
+}
+
+.small-container {
+  border: 1px solid gray;
+  background-color: rgb(229, 228, 228);
+}
+
+.small-container .img-container {
+  box-shadow: 0 4px rgba(0, 0, 0, 0.2);
+}
+
+.add-btn {
+  color: orange;
+}
+
+#All{
+    color: orange;
+}
+
+#dropdownDefaultButton{
+  background-color: black;
+}
+.editbutton{
+    margin-top:100px;
+}
+.columns-5 
+{
+ column-count: 5;
+ column-gap: 2rem;
+}
+.break-inside {
+ break-inside: avoid;
+}
+.item {
+         margin-bottom: 2rem; /* Increase margin between items */
+}

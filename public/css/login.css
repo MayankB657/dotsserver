@@ -1,0 +1,100 @@
+.left-background {
+  background-image: url("../images/Wallpaper.png");
+  border-top-right-radius: 100px;
+}
+
+.right-background {
+  background-image: url("../images/Wallpaper.png");
+  border-top-left-radius: 100px;
+}
+
+.blur-container {
+  width: 700px;
+  height: 600px;
+  border-radius: 50px;
+  background: rgba(217, 217, 217, 0.41);
+  box-shadow: var(--box-shadow) inset;
+  filter: blur(10px);
+  backdrop-filter: blur(2px);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.login-container {
+  width: 700px;
+  height: 600px;
+  border-radius: 50px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.vector-img {
+  position: absolute;
+  z-index: -1;
+}
+
+.right-container .userinput {
+  padding: 0px 15px;
+  width: 289px;
+  height: 32px;
+  margin-bottom: 20px;
+  outline: none;
+  border-radius: 20px;
+  background: rgba(0, 0, 0, 0.16);
+  box-shadow: var(--box-shadow);
+  color: var(--color-pure-black);
+}
+
+#login-btn {
+  background: var(--color-light-gray);
+  color: var(--color-white);
+  margin-top: 20px;
+}
+
+input::placeholder {
+  color: var(--color-pure-black);
+}
+
+
+@media (max-width:480px){
+  .blur-container {
+  width: 400px;
+  height: 500px;
+}
+
+.login-container {
+  width: 400px;
+  height: 500px;
+}
+
+.vector-img {
+ width: 150px;
+ height: 150px;
+}
+
+.profile-img{
+  width: 70px;
+  height: 70px;
+}
+
+.right-container .userinput {
+  width: 230px;
+}
+
+.login{
+  padding: 0;
+}
+
+.right-container{
+  padding: 0 30px 0 0;
+}
+
+.logo img{
+  width: 60px;
+  height: 60px;
+}
+}

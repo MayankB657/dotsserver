@@ -1,0 +1,1967 @@
+/* ***************** This CSS for Desktop page ********************** */
+
+.dashboard {
+    background-image: url("../images/Wallpaper.png");
+    background-size: 100% 100%;
+    background-position: center;
+    position: relative;
+}
+
+/* Icon color */
+
+.icon-color {
+    color: var(--color-white);
+
+    
+}
+
+.Ad-iconcolor {
+    color: var(--color-light-black);
+}
+
+.clock{
+    cursor: default;
+}
+
+/* Taskbar and iFrame */
+
+.box {
+    position: fixed;
+    top: 50% !important;
+    left: 50% !important;
+    background-color: white;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    z-index: 9999;
+    width: 80%;
+    /* Adjust width as needed */
+    height: 80%;
+    overflow: auto;
+    transition: transform 0.5s ease-in-out;
+    transform-origin: center;
+}
+
+.setting-box {
+    position: fixed;
+        top: 50% !important;
+        left: 50% !important;
+        background-color: white;
+        border: 1px solid #ccc;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        z-index: 9999;
+        width: 80%;
+        /* Adjust width as needed */
+        height: 80%;
+        overflow-y: hidden;
+        transition: transform 0.5s ease-in-out;
+        transform-origin: center;
+}
+
+.popupiframe {
+    transform: translate(-50%, -100%) scale(0);
+}
+
+.popupiframe.show {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.popupiframe.hidden {
+    display: none;
+}
+
+.popupiframe-content {
+    padding: 10px;
+}
+
+.popupiframe-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.popupiframe-header i {
+    cursor: pointer;
+}
+
+.popupiframe iframe {
+    width: 100%;
+    height: 93.2%;
+    border: none;
+}
+
+.maximized {
+    width: 100% !important;
+    height: 100% !important;
+    top: 0 !important;
+    left: 0 !important;
+    transform: none !important;
+}
+
+.maximized.reduced-height {
+    height: calc(100% - 64px) !important;
+    top: 64px !important;
+}
+
+.draggable {
+    transition: height 0.3s ease-in-out, top 0.3s ease-in-out;
+}
+
+.triangle-btn {
+    width: 0;
+    height: 0;
+    border-top: 4px solid transparent;
+    border-bottom: 4px solid transparent;
+    border-left: 6px solid transparent;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transform: translateY(-50%);
+}
+
+.taskbar-slide {
+    transition: top 0.4s ease-in-out;
+    top: -100%;
+    background: #fdfdfd3d;
+    backdrop-filter: blur(2px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-right-color: rgba(255, 255, 255, 0.1);
+    border-bottom-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+}
+
+.navbar {
+    transition: top 0.2s ease-in-out;
+    top: -100%;
+    background: transparent;
+    border-bottom: 1px solid #978a82;
+    box-shadow: 0px 1px 18px -6px rgba(189, 170, 157, 0.7);
+    z-index: 9;
+}
+
+.navbar #shelf {
+    height: 25px;
+}
+
+.navbar img {
+    height: 45px;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.navbar #toolbar {
+    overflow-x: scroll;
+}
+
+.navbar.show {
+    top: 0;
+    z-index: 999999;
+}
+
+.navbar .taskbar-dropdown-menu {
+    border-radius: 5px;
+    overflow: hidden;
+    display: none;
+    z-index: 1;
+    position: absolute;
+    right: 21px;
+    top: 30px;
+    background: #e7e5e5;
+    box-shadow: var(--box-shadow);
+
+}
+
+.navbar .taskbar-dropdown-menu.show {
+    display: block;
+}
+
+.navbar .taskbar-dropdown-item {
+    width: 100%;
+    height: 35px;
+    line-height: 25px;
+    border: 0;
+    padding: 0 10px;
+    cursor: pointer;
+    transition: 0.1s ease-in;
+    font-weight: 500;
+    color: #282828;
+    text-align: left;
+    font-size: 13px;
+
+}
+
+.navbar .taskbar-dropdown-item i{
+    font-size: 15px;
+}
+
+.navbar .taskbar-dropdown-item:hover {
+    background-color: #fdcf01;
+}
+
+.navbar .taskbar-dropdown-item:not(:last-child) {
+    border-bottom: 1px solid #e5e5e5;
+}
+
+
+.taskbar-slide img {
+    height: 45px;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.taskbar-slide #shelf {
+    height: 25px;
+}
+
+.taskbar-slide #toolbar {
+    overflow-x: scroll;
+}
+
+#toolbar::-webkit-scrollbar {
+    display: none;
+}
+
+.box {
+    transition: transform 0.6s ease, opacity 0.6s ease;
+}
+
+.minimized {
+    transform: translate(-50%, -100%) scale(0) !important;
+}
+
+.moving-to-top {
+    animation: moveToTop 0.5s ease-in-out forwards;
+}
+
+@keyframes moveToTop {
+    from {
+        transform: translate(0, 0) rotateY(0deg);
+    }
+
+    to {
+        transform: translate(var(--move-x), var(--move-y)) rotate(360deg);
+    }
+}
+
+.fall-down {
+    animation: fallDown 0.5s ease-in-out forwards;
+}
+
+@keyframes fallDown {
+    0% {
+        transform: translate(-50%, -100%) scale(0);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+/* Desktop apps */
+
+.desktopapps-div {
+    height: calc(100% - 64px);
+    width: calc(100% - 470px);
+}
+
+.desktopapps-div .desktop-apps {
+    overflow-x: auto;
+}
+
+.desktop-apps::-webkit-scrollbar {
+    height: 5px;
+}
+
+.desktop-apps::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.desktop-apps::-webkit-scrollbar-thumb {
+    background-color: rgba(128, 128, 128, 0.76);
+    border-radius: 10px;
+}
+
+@media (max-width: 1280px) {
+    .desktopapps-div {
+        width: calc(100% - 120px);
+    }
+}
+
+@media (max-width: 1024px) {
+    .desktopapps-div {
+        width: calc(100% - 145px);
+    }
+}
+
+@media (max-width: 768px) {
+    .desktopapps-div {
+        width: calc(100% - 200px);
+    }
+}
+
+@media (max-width: 480px) {
+    .desktopapps-div {
+        width: 100%;
+    }
+}
+
+.app:hover {
+    border-radius: 5px;
+    background: #fdfdfd3d;
+    backdrop-filter: blur(2px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-right-color: rgba(255, 255, 255, 0.1);
+    border-bottom-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1);
+}
+
+.app:hover .app-tools {
+    visibility: visible;
+}
+
+/* Right click Menu */
+
+.context-menu {
+    position: absolute;
+    z-index: 1000;
+    min-width: 200px;
+    border: 1px solid var(--color-gray-2);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+}
+
+.context-menu ul {
+    list-style: none;
+    padding: 5px 3px;
+    margin: 0;
+}
+
+.context-menu ul li {
+    position: relative;
+}
+
+.context-menu ul li a {
+    text-decoration: none;
+    color: var(--color-light-gray);
+    display: block;
+}
+
+.context-menu ul li:hover {
+    background: var(--color-dark-yellow);
+    border-radius: 5px;
+}
+
+.context-menu ul li:hover > .submenu {
+    display: block;
+}
+
+.context-menu ul li a {
+    color: var(--color-light-gray);
+    font-size: var(--font-weight-400);
+    font-size: var(--font-size-14);
+}
+
+.submenu {
+    position: absolute;
+    min-width: 200px;
+    top: -10%;
+    left: 100%;
+    background-color: var(--color-white);
+    border: 1px solid var(--color-gray-2);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+.menu-sidename {
+    font-size: var(--font-size-14);
+    font-weight: var(--font-weight-400);
+    color: var(--color-medium-gray);
+}
+
+.open-submenu {
+    min-width: 250px;
+}
+
+/* Search Input */
+
+.dashboard .Search {
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+    width: 90%;
+    max-width: 600px;
+    background: var(--bg-linear-gradient);
+    box-shadow: var(--box-shadow);
+    border-radius: 20px;
+}
+
+.Search.open {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    padding: 10px 50px;
+}
+
+.row input {
+    flex: 1;
+    height: 30px;
+    background: transparent;
+    border: 0;
+    outline: 0;
+    font-size: 16px;
+}
+
+.searchdata {
+    position: absolute;
+    width: 100%;
+    background: var(--bg-linear-gradient);
+    box-shadow: var(--box-shadow);
+    border-top: 1px solid var(--border-color);
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    overflow-y: auto;
+}
+
+input[type="search"]::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+}
+
+.search-icon {
+    left: 16px;
+    top: 12px;
+}
+
+.cross-icon {
+    right: 20px;
+    top: 12px;
+    cursor: pointer;
+}
+
+/* Sidebar */
+
+.dashboard .dashboard-sidebar {
+    border-radius: 24px;
+    background: #c6c6c660;
+    position: absolute;
+    top: 35%;
+    right: 30px;
+}
+
+/* Notification */
+
+.notification-container .Notification {
+    width: 90%;
+    max-width: 350px;
+    border-radius: 20px;
+    background: var(--color-lighten-gray);
+    box-shadow: var(--box-shadow);
+    z-index: 99;
+}
+
+.notification-container .Notification .scrollbar-div::-webkit-scrollbar {
+    display: none;
+}
+
+/* Administrator */
+
+.dashboard .Administrator {
+    width: 90%;
+    max-width: 500px;
+    border-radius: 20px;
+    background: var(--bg-linear-gradient);
+    box-shadow: var(--box-shadow);
+}
+
+.user-info h1 {
+    font-size: 25px;
+    line-height: 1;
+}
+
+.features-list ul li:hover a {
+    font-weight: 600;
+    text-decoration: underline solid var(--color-dark-yellow) 15%;
+    text-underline-position: under;
+}
+
+.features-list ul li:hover i {
+    color: var(--color-dark-yellow);
+}
+
+/* Text scroll css */
+
+.input-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.input-wrapper input[type="text"] {
+    display: none;
+}
+
+.input-wrapper .text-display {
+    display: block;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.input-wrapper .text-display:focus-within {
+    display: none;
+}
+
+.input-wrapper input[type="text"] {
+    display: block;
+    width: 100%;
+    padding: 8px;
+    border-radius: 4px;
+    box-sizing: border-box;
+    outline: none;
+}
+
+.appinputtext {
+    border: none;
+    background: transparent;
+}
+
+/* Input checkbox css */
+
+.cs .app-tools input[type="checkbox"] {
+    accent-color: var(--color-dark-yellow);
+}
+
+.cs .app-tools input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    font-size: 2rem;
+    padding: 0.1rem;
+    width: 12px;
+    cursor: pointer;
+    position: relative;
+    height: 12px;
+    border: 1px solid var(--color-pure-black);
+    border-radius: 2px;
+}
+
+.cs .app-tools input[type="checkbox"]:checked {
+    background-color: rgba(217, 217, 217, 0.41);
+}
+
+.cs .app-tools input[type="checkbox"]:checked::after {
+    content: "✔";
+    font-size: 10px;
+    position: absolute;
+    height: 12px;
+    top: -2px;
+    left: 1px;
+}
+
+/* @media (max-width: 900px) {
+    .dashboard .clock {
+        top: 28px;
+        left: 70px;
+        align-items: start;
+        gap: 0px;
+    }
+
+    .clock .time {
+        font-size: 2vw;
+        line-height: 0.5;
+    }
+
+    .clock .date {
+        font-size: 1.5vw;
+    }
+} */
+
+@media (max-width: 480px) {
+    .cs .app-tools input[type="checkbox"]:checked::after {
+        content: "\2713";
+        font-size: 11px;
+        position: absolute;
+        height: 12px;
+        top: -3px;
+        left: 1px;
+    }
+
+    .dashboard .Administrator {
+        background: var(--color-lighten-gray);
+    }
+
+    .user-info h1 {
+        font-size: 20px;
+        line-height: 1;
+    }
+
+    .dashboard .Search {
+        background: var(--color-lighten-gray);
+    }
+
+    /* .dashboard .clock {
+        top: 28px;
+        left: 50px;
+        align-items: start;
+        gap: 0px;
+    } */
+
+    .clock .time {
+        font-size: 4vw;
+        line-height: 1;
+    }
+
+    .clock .date {
+        font-size: 2.5vw;
+    }
+
+    .dashboard .app {
+        height: 110px;
+    }
+
+    .dashboard .app img {
+        width: 55px;
+    }
+}
+
+@media (max-width: 320px) {
+    .dashboard .Administrator {
+        top: 2%;
+    }
+
+    .features-list {
+        padding: 5px 40px;
+    }
+
+    .features-list ul li {
+        margin: 6px;
+    }
+}
+
+/* ****************** This CSS for Login page *********************** */
+
+.login .left-background {
+    background-image: var(--login-wallpaper-1) !important;
+    border-top-right-radius: 100px;
+}
+
+.login .right-background {
+    background-image: var(--login-wallpaper-1) !important;
+    border-top-left-radius: 100px;
+}
+
+
+
+
+.login .blur-container {
+    width: 700px;
+    height: 600px;
+    border-radius: 50px;
+    background: rgba(217, 217, 217, 0.41);
+    box-shadow: var(--box-shadow) inset;
+    filter: blur(7px);
+    backdrop-filter: blur(2px);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.login .blur-popup-container {
+    background: rgba(217, 217, 217, 0.41);
+    border-radius: 50px;
+    filter: blur(7px);
+    backdrop-filter: blur(2px);
+    box-shadow: var(--box-shadow) inset;
+}
+
+.login .userinput::placeholder {
+    font-weight: 400 !important;
+    color: #646464 !important;
+}
+
+.login .login-container {
+    width: 700px;
+    height: 600px;
+    border-radius: 50px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.login .right-container .userinput {
+    padding: 0px 15px;
+    width: 289px;
+    height: 32px;
+    outline: none;
+    border-radius: 20px;
+    background: rgba(0, 0, 0, 0.16);
+    box-shadow: var(--box-shadow);
+    color: var(--color-pure-black);
+}
+
+.login #login-btn {
+    background: var(--color-light-gray);
+    color: var(--color-white);
+}
+
+.cs .userinput::placeholder {
+    color: var(--color-pure-black);
+}
+
+@media (max-width: 768px) {
+    .login .blur-container,
+    .login .blur-popup-container,
+    .login .login-container {
+        width: 96%;
+        max-height: 500px;
+        border-radius: 20px;
+        padding: 20px;
+    }
+
+    .login .logo {
+        margin-top: 20px;
+    }
+
+    .login .user-login {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 10px;
+        padding-left: 0;
+    }
+
+    .login .left-container {
+        display: none;
+    }
+
+    .login .right-container {
+        padding: 10px;
+    }
+
+    .login .right-container .userinput {
+        width: 100%;
+    }
+
+    .login #login-btn {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .login .blur-container,
+    .login .blur-popup-container,
+    .login .login-container {
+        width: 100%;
+    }
+
+    .login .left-container {
+        margin-bottom: 20px;
+    }
+}
+
+/* ********************** This CSS for LightApp Page ***************************** */
+
+.lightapp .all-tab {
+    background: var(--color-light-gray);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.lightapp .lightapp-btn {
+    background: var(--color-light-gray);
+    color: var(--color-dark-yellow);
+}
+
+.lightapp .modal-heading {
+    font-size: 16px;
+    color: var(--color-pure-black);
+}
+
+.lightapp .small-container {
+    width: 187px;
+    height: 227px;
+    border: 1px solid var(--border-light-gray);
+    background-color: var(--bg-light-gray);
+    border-radius: 11px;
+}
+
+.lightapp .small-container .img-container {
+    width: 70px;
+    height: 70px;
+    box-shadow: 0 4px rgba(0, 0, 0, 0.2);
+}
+
+.lightapp .small-container #dropdown {
+    z-index: 99999;
+}
+
+/* Edit Modal */
+
+.lightapp #Edit-modal .img-container {
+    width: 60px;
+    height: 60px;
+    border-radius: 15px;
+    background: var(--color-white);
+    box-shadow: var(--box-shadow);
+}
+
+.lightapp .add-btn {
+    color: var(--color-dark-yellow);
+}
+
+.lightapp #All {
+    color: var(--color-dark-yellow);
+}
+
+/* Dropdown menu and button */
+
+.lightapp .dropdown-menu {
+    border: 1px solid #686868;
+}
+
+.lightapp .dropdown-button {
+    border-radius: 5px;
+    background: var(--color-light-gray);
+}
+
+/* For Internet Explorer 10-11 */
+.lightapp input:-ms-input-placeholder {
+    color: var(--color-gray-2);
+    font-weight: 300;
+}
+
+/* For Microsoft Edge */
+.lightapp input::-ms-input-placeholder {
+    color: var(--color-gray-2);
+    font-weight: 300;
+}
+
+/* Checkbox css */
+
+.ms input[type="checkbox"] {
+    accent-color: var(--color-dark-yellow);
+}
+
+.ms input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    font-size: 2rem;
+    padding: 0.1rem;
+    width: 16px;
+    cursor: pointer;
+    position: relative;
+    height: 16px;
+    border: none;
+    border: 2px solid var(--color-dark-yellow);
+    border-radius: 2px;
+}
+
+.ms input[type="checkbox"]:checked {
+    background-color: var(--color-white);
+}
+
+.ms input[type="checkbox"]:checked::after {
+    content: "✔";
+    font-size: 12px;
+    position: absolute;
+    height: 12px;
+    top: -2px;
+    left: 2px;
+}
+
+/* Responsive css */
+
+@media (max-width: 320px) {
+    .ms h4 {
+        font-size: 11px;
+    }
+}
+
+@media (max-width: 480px) {
+    .lightapp .small-container {
+        width: 150px;
+        height: 200px;
+    }
+
+    .ms input[type="checkbox"]:checked::after {
+        content: "\2713";
+        font-size: 11px;
+        height: 12px;
+        top: -2px;
+        left: 2px;
+    }
+
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+}
+
+@media (max-width: 835px) {
+    .lightapp .small-container {
+        width: 168px;
+        height: 210px;
+    }
+}
+
+/* ************************ This CSS for Plugin Page ****************************** */
+
+.plugin .all-tab {
+    background: var(--color-light-gray);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+/* Css for Apps */
+.plugin .small-container {
+    width: 187px;
+    height: 227px;
+    border: 1px solid var(--border-light-gray);
+    background-color: var(--bg-light-gray);
+    border-radius: 11px;
+}
+
+.plugin .small-container .img-container {
+    width: 70px;
+    height: 70px;
+    box-shadow: 0 4px rgba(0, 0, 0, 0.2);
+}
+
+.plugin #All {
+    color: var(--color-dark-yellow);
+}
+
+.plugin .dropdown-button {
+    border-radius: 5px;
+    background: var(--color-light-gray);
+}
+
+.plugin .dropdown-menu {
+    border: 1px solid var(--border-light-gray);
+}
+
+.plugin .plugin-modal {
+    max-width: 1016px;
+    height: 600px;
+    border-radius: 20px;
+}
+
+.plugin .modal-container {
+    width: 220px;
+    height: 400px;
+    border-radius: 11px;
+    border: 1px solid var(--border-light-gray);
+}
+
+@media (max-width: 480px) {
+    .plugin .small-container {
+        width: 150px;
+        height: 200px;
+    }
+}
+
+@media (max-width: 835px) {
+    .plugin .small-container {
+        width: 168px;
+        height: 210px;
+    }
+}
+
+/* ************************ This CSS for Storage File Backup Page ***************************** */
+
+@media (max-width: 320px) {
+    .backup .label {
+        font-size: 12px;
+    }
+
+    .backup .radio-button span {
+        width: 20px;
+        font-size: 11px;
+    }
+
+    .backup .radio-circle .text {
+        font-size: 12px;
+    }
+}
+
+/* ************************ This CSS for System Setting Role Page ****************************** */
+
+.role .title-btn {
+    background-color: var(--color-dark-yellow);
+}
+
+.role hr {
+    border: 1px solid var(--color-light-white);
+}
+
+.role .checkbox-container {
+    background-color: var(--color-lighten-gray);
+    border: 1px solid var(--border-light-gray);
+}
+
+.role #modal {
+    z-index: 999;
+}
+
+/* input and textarea Css */
+
+.role .add input,
+.role textarea {
+    border: 1px solid var(--border-light-gray);
+}
+
+.role .edit input,
+.role textarea {
+    border: 1px solid var(--border-light-gray);
+}
+
+.role .addModal,
+.role .editModal {
+    max-width: 832px;
+}
+
+.role input::placeholder {
+    color: var(--color-gray-2);
+    font-weight: 300;
+}
+
+/* For Internet Explorer 10-11 */
+.role input:-ms-input-placeholder {
+    color: var(--color-gray-2);
+    font-weight: 300;
+}
+
+/* For Microsoft Edge */
+.role input::-ms-input-placeholder {
+    color: var(--color-gray-2);
+    font-weight: 300;
+}
+
+/* Checkbox css */
+
+.role input[type="checkbox"].d-checkbox {
+    accent-color: var(--color-dark-yellow);
+}
+
+.role input[type="checkbox"].d-checkbox {
+    appearance: none;
+    -webkit-appearance: none;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    font-size: 2rem;
+    padding: 0.1rem;
+    width: 16px;
+    cursor: pointer;
+    position: relative;
+    height: 16px;
+    border: 2px solid var(--color-dark-yellow);
+    border-radius: 2px;
+}
+
+.role input[type="checkbox"].d-checkbox:checked {
+    background-color: var(--color-white);
+}
+
+.role input[type="checkbox"].d-checkbox:checked::after {
+    content: "\2714";
+    font-size: 12px;
+    position: absolute;
+    height: 12px;
+    top: -2px;
+    left: 2px;
+}
+
+@media (max-width: 480px) {
+    .role input[type="checkbox"].d-checkbox:checked::after {
+        content: "\2713";
+        font-size: 12px;
+        position: absolute;
+        height: 12px;
+        top: -3px;
+        left: 1px;
+    }
+}
+
+/* ********************* This CSS for Help Page ***************************** */
+
+.help .username {
+    text-decoration-color: var(--color-dark-yellow);
+}
+
+.help .submit-btn {
+    border-radius: 30px;
+    background-color: var(--color-light-gray);
+}
+
+/* ********************** This CSS for Account Page ******************************* */
+
+.account .enabled-input {
+    width: 100%;
+    max-width: 494px;
+    height: 38px;
+    border-radius: 11px;
+    border: 1px solid var(--border-light-gray);
+    background: var(--color-lighten-gray);
+    padding: 0 10px;
+}
+
+.account .bg-edit-mode {
+    border-radius: 5px;
+    background: #efefef;
+    padding: 5px;
+    margin: 10px 0;
+}
+
+.account .input-div {
+    width: 100%;
+    max-width: 494px;
+    height: 38px;
+    border-radius: 11px;
+    background: var(--color-lighten-gray);
+    border: 1px solid var(--border-light-gray);
+    overflow: hidden;
+}
+
+.account .input-div input {
+    width: 90%;
+    height: 100%;
+    padding: 0 10px;
+    background: var(--color-lighten-gray);
+}
+
+.account .wallpapers {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 13rem);
+    justify-content: start;
+    gap: 35px;
+    border-top: 1px solid grey;
+    margin-top: 30px;
+}
+
+.theme-yellow {
+    background-color: var(--color-dark-yellow);
+    color: #000;
+  }
+
+.account #add-login{
+    max-width: 196px;
+    height: 136px;
+    border-radius: 20px;
+    box-shadow: var(--box-shadow);
+}
+.account #add-desktop {
+    max-width: 196px;
+    height: 136px;
+    border-radius: 20px;
+    box-shadow: var(--box-shadow);
+}
+
+.account .wallpaper-div {
+    max-width: 196px;
+    height: 136px;
+    border-radius: 20px;
+}
+
+@media (max-width: 480px) {
+    .account .enabled-input {
+        height: 30px;
+    }
+
+    .account .input-div {
+        height: 30px;
+    }
+
+    .account .input-div input {
+        width: 83%;
+    }
+}
+
+@media (min-width: 320px) {
+    .account .wallpapers {
+        justify-content: center;
+    }
+}
+
+@media (min-width: 600px) {
+    .account .wallpapers {
+        justify-content: center;
+        gap: 40px;
+    }
+}
+
+@media (min-width: 1000px) {
+    .account .wallpapers {
+        justify-content: center;
+        gap: 25px;
+    }
+}
+
+@media (min-width: 1281px) {
+    .account .wallpapers {
+        justify-content: start;
+        gap: 37px;
+    }
+}
+
+/* *********************** Shared by Adil Basic page Css *************************** */
+
+.bg-c-div-gray {
+    background-color: #ededed;
+}
+
+.br-c-amber {
+    background-color: #fef3c7;
+}
+
+.cs input[type="checkbox"].d-checkbox {
+    accent-color: var(--color-dark-yellow);
+}
+
+.cs input[type="checkbox"].d-checkbox {
+    appearance: none;
+    -webkit-appearance: none;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    font-size: 2rem;
+    padding: 0.1rem;
+    width: 16px;
+    cursor: pointer;
+    position: relative;
+    height: 16px;
+    border: 2px solid var(--color-dark-yellow);
+    border-radius: 2px;
+}
+
+.cs input[type="checkbox"].d-checkbox:checked {
+    background-color: var(--color-white);
+}
+
+.cs input[type="checkbox"].d-checkbox:checked::after {
+    content: "✔";
+    font-size: 12px;
+    position: absolute;
+    height: 12px;
+    top: -2px;
+    left: 2px;
+}
+
+@media (max-width: 480px) {
+    .cs input[type="checkbox"].d-checkbox:checked::after {
+        content: "\2713";
+        font-size: 12px;
+        position: absolute;
+        height: 12px;
+        top: -3px;
+        left: 2px;
+    }
+}
+
+@media (max-width: 375px) {
+    .flex-col {
+        flex-direction: column;
+    }
+
+    .w-full {
+        width: 100%;
+    }
+
+    .mt-1 {
+        margin-top: 0.25rem;
+    }
+
+    .md\:mt-0 {
+        margin-top: 0;
+    }
+
+    .md\:ml-2 {
+        margin-left: 0;
+    }
+}
+
+/* *********************** Step form used in login page *************************** */
+
+.login #heading {
+    text-transform: uppercase;
+    color: #673ab7;
+    font-weight: normal;
+}
+
+.login .msform {
+    text-align: center;
+    position: relative;
+    margin-top: 20px;
+}
+
+.login .msform fieldset {
+    border: 0 none;
+    border-radius: 0.5rem;
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0;
+    padding-bottom: 20px;
+    position: relative;
+}
+
+.login .form-card {
+    text-align: left;
+}
+
+.login .msform fieldset:not(:first-of-type) {
+    display: none;
+}
+
+.login .card {
+    z-index: 0;
+    border: none;
+    position: relative;
+}
+
+.login .photos {
+    width: 5.5rem;
+}
+
+.login .steps {
+    font-size: 25px;
+    color: gray;
+    margin-bottom: 10px;
+    font-weight: normal;
+    text-align: right;
+}
+
+.login #progressbar {
+    overflow: hidden;
+    color: lightgrey;
+}
+
+.login #progressbar .active {
+    color: var(--color-dark-yellow);
+    font-weight: 600;
+}
+
+.login #progressbar li {
+    list-style-type: none;
+    font-size: 15px;
+    width: 33.333333%;
+    float: left;
+    position: relative;
+    font-weight: 400;
+}
+
+.login #progressbar #camera:before {
+    content: "1";
+}
+
+.login #progressbar #voice:before {
+    content: "2";
+}
+
+.login #progressbar #confirm:before {
+    content: "3";
+}
+
+.login #progressbar li:before {
+    width: 30px;
+    height: 30px;
+    display: block;
+    font-size: 20px;
+    color: #ffffff;
+    background: lightgray;
+    border-radius: 50%;
+    margin: 11px auto 10px auto;
+}
+
+.login #progressbar li:after {
+    content: "";
+    width: 100%;
+    height: 2px;
+    background: lightgray;
+    position: absolute;
+    left: 0;
+    top: 25px;
+    z-index: -1;
+}
+
+.custom-bg-iframe {
+    background: rgb(235 224 224 / 86%) !important;
+}
+
+.login #progressbar li.active:before,
+.login #progressbar li.active:after {
+    background: var(--color-dark-yellow);
+}
+
+.login .progress {
+    height: 20px;
+}
+
+.login .progress-bar {
+    background-color: #673ab7;
+}
+
+.login .fit-image {
+    width: 100%;
+    object-fit: cover;
+}
+
+/* scroll-x for every page */
+.login .scroll::-webkit-scrollbar {
+    width: 4px;
+}
+
+.login .scroll::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.login .scroll::-webkit-scrollbar-thumb {
+    background-color: rgba(128, 128, 128, 0.54);
+    border-radius: 10px;
+}
+
+/* *********************** audio button animation used in login page *************************** */
+
+.login .mic-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .circle {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        background: #ffffff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1;
+        transition: 0.5s;
+        box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14),
+            0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.2);
+
+        i {
+            color: #b2b1b1;
+            font-size: 23px;
+            transition: 0.9s;
+        }
+
+        &:before {
+            content: "";
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            opacity: 0.2;
+            z-index: -1;
+            position: absolute;
+        }
+    }
+
+    .circle.active {
+        background: var(--color-dark-yellow);
+
+        &:before {
+            background-color: gray;
+            animation: bounce 0.8s ease-in-out infinite 0.5s;
+        }
+
+        i {
+            color: #ffffff;
+        }
+    }
+}
+
+@keyframes bounce {
+    0% {
+        transform: scale(1);
+    }
+
+    25% {
+        transform: scale(1.4);
+    }
+
+    75% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1.3);
+    }
+}
+
+/********* Remove highlight color when click on any button in project ********/
+button,
+input[type="button"] {
+    -webkit-tap-highlight-color: transparent;
+    /* Remove tap highlight color */
+}
+
+button:focus,
+input[type="button"]:focus {
+    outline: none;
+    /* Remove the focus outline */
+}
+
+/**Tooltip **/
+.tooltip1 {
+    display: none;
+}
+
+.has-tooltip1:hover ~ .tooltip1 {
+    display: block;
+}
+
+/********* curtains animation on desktop page ********/
+
+#curtain {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    z-index: 9999;
+    overflow: hidden;
+}
+
+#curtain .left,
+#curtain .right {
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#curtain .left {
+    background-image: var(--curtain-wallpaper);
+    left: 0;
+    transform-origin: top right;
+}
+
+#curtain .right {
+    background-image: var(--curtain-wallpaper);
+    left: 50%;
+    transform-origin: top left;
+}
+
+/* **********
+      opening
+  ********** */
+#curtain.open .left {
+    animation-fill-mode: forwards;
+    animation-name: left-curtain-opening;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+}
+
+#curtain.open .right {
+    animation-fill-mode: forwards;
+    animation-name: right-curtain-opening;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+}
+
+/* **********
+      animations
+  ********** */
+
+@keyframes left-curtain-opening {
+    /* 4s */
+    from {
+        transform: translateX(-100%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes right-curtain-opening {
+    /* 4s */
+    from {
+        transform: translateX(100%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+/********* custom dropdown css for every page ********/
+
+/*the container must be positioned relative:*/
+.custom-dropdown {
+    position: relative;
+    font-family: Arial;
+    margin-bottom: 10px; /* added for spacing between dropdowns */
+  }
+  
+  .custom-dropdown select {
+    display: none; /*hide original SELECT element:*/
+  }
+  
+  .select-selected {
+      border-radius: 0.75rem;
+      background-color: #F9F9F9;
+      color: #282828;
+      padding: 8px 16px;
+      border: 1px solid #a3a3a3;
+      cursor: pointer;
+  }
+  
+  /*style the items (options), including the selected item:*/
+  .select-items div {
+      color: #282828;
+      padding: 6px 16px;
+      cursor: pointer;
+      user-select: none;
+  }
+  
+  /*style items (options):*/
+  .select-items {
+      border: 1px solid #a3a3a3;
+      border-radius: 5px;
+      position: absolute;
+      background-color: #F9F9F9;
+      top: 102%;
+      left: 0;
+      right: 0;
+      z-index: 99;
+  }
+  
+  /*hide the items when the select box is closed:*/
+  .select-hide {
+    display: none;
+  }
+  
+  .select-items div:hover, .same-as-selected {
+    background-color: #FDCF01;
+  }
+
+  .bell {
+      color: #fdcf01;
+      -webkit-animation: ring 4s .7s ease-in-out infinite;
+      -webkit-transform-origin: 50% 4px;
+      -moz-animation: ring 4s .7s ease-in-out infinite;
+      -moz-transform-origin: 50% 4px;
+      animation: ring 4s .7s ease-in-out infinite;
+      transform-origin: 50% 4px;
+  }
+
+  @-webkit-keyframes ring {
+      0% {
+          -webkit-transform: rotateZ(0);
+      }
+
+      1% {
+          -webkit-transform: rotateZ(30deg);
+      }
+
+      3% {
+          -webkit-transform: rotateZ(-28deg);
+      }
+
+      5% {
+          -webkit-transform: rotateZ(34deg);
+      }
+
+      7% {
+          -webkit-transform: rotateZ(-32deg);
+      }
+
+      9% {
+          -webkit-transform: rotateZ(30deg);
+      }
+
+      11% {
+          -webkit-transform: rotateZ(-28deg);
+      }
+
+      13% {
+          -webkit-transform: rotateZ(26deg);
+      }
+
+      15% {
+          -webkit-transform: rotateZ(-24deg);
+      }
+
+      17% {
+          -webkit-transform: rotateZ(22deg);
+      }
+
+      19% {
+          -webkit-transform: rotateZ(-20deg);
+      }
+
+      21% {
+          -webkit-transform: rotateZ(18deg);
+      }
+
+      23% {
+          -webkit-transform: rotateZ(-16deg);
+      }
+
+      25% {
+          -webkit-transform: rotateZ(14deg);
+      }
+
+      27% {
+          -webkit-transform: rotateZ(-12deg);
+      }
+
+      29% {
+          -webkit-transform: rotateZ(10deg);
+      }
+
+      31% {
+          -webkit-transform: rotateZ(-8deg);
+      }
+
+      33% {
+          -webkit-transform: rotateZ(6deg);
+      }
+
+      35% {
+          -webkit-transform: rotateZ(-4deg);
+      }
+
+      37% {
+          -webkit-transform: rotateZ(2deg);
+      }
+
+      39% {
+          -webkit-transform: rotateZ(-1deg);
+      }
+
+      41% {
+          -webkit-transform: rotateZ(1deg);
+      }
+
+      43% {
+          -webkit-transform: rotateZ(0);
+      }
+
+      100% {
+          -webkit-transform: rotateZ(0);
+      }
+  }
+
+  @-moz-keyframes ring {
+      0% {
+          -moz-transform: rotate(0);
+      }
+
+      1% {
+          -moz-transform: rotate(30deg);
+      }
+
+      3% {
+          -moz-transform: rotate(-28deg);
+      }
+
+      5% {
+          -moz-transform: rotate(34deg);
+      }
+
+      7% {
+          -moz-transform: rotate(-32deg);
+      }
+
+      9% {
+          -moz-transform: rotate(30deg);
+      }
+
+      11% {
+          -moz-transform: rotate(-28deg);
+      }
+
+      13% {
+          -moz-transform: rotate(26deg);
+      }
+
+      15% {
+          -moz-transform: rotate(-24deg);
+      }
+
+      17% {
+          -moz-transform: rotate(22deg);
+      }
+
+      19% {
+          -moz-transform: rotate(-20deg);
+      }
+
+      21% {
+          -moz-transform: rotate(18deg);
+      }
+
+      23% {
+          -moz-transform: rotate(-16deg);
+      }
+
+      25% {
+          -moz-transform: rotate(14deg);
+      }
+
+      27% {
+          -moz-transform: rotate(-12deg);
+      }
+
+      29% {
+          -moz-transform: rotate(10deg);
+      }
+
+      31% {
+          -moz-transform: rotate(-8deg);
+      }
+
+      33% {
+          -moz-transform: rotate(6deg);
+      }
+
+      35% {
+          -moz-transform: rotate(-4deg);
+      }
+
+      37% {
+          -moz-transform: rotate(2deg);
+      }
+
+      39% {
+          -moz-transform: rotate(-1deg);
+      }
+
+      41% {
+          -moz-transform: rotate(1deg);
+      }
+
+      43% {
+          -moz-transform: rotate(0);
+      }
+
+      100% {
+          -moz-transform: rotate(0);
+      }
+  }
+
+  @keyframes ring {
+      0% {
+          transform: rotate(0);
+      }
+
+      1% {
+          transform: rotate(30deg);
+      }
+
+      3% {
+          transform: rotate(-28deg);
+      }
+
+      5% {
+          transform: rotate(34deg);
+      }
+
+      7% {
+          transform: rotate(-32deg);
+      }
+
+      9% {
+          transform: rotate(30deg);
+      }
+
+      11% {
+          transform: rotate(-28deg);
+      }
+
+      13% {
+          transform: rotate(26deg);
+      }
+
+      15% {
+          transform: rotate(-24deg);
+      }
+
+      17% {
+          transform: rotate(22deg);
+      }
+
+      19% {
+          transform: rotate(-20deg);
+      }
+
+      21% {
+          transform: rotate(18deg);
+      }
+
+      23% {
+          transform: rotate(-16deg);
+      }
+
+      25% {
+          transform: rotate(14deg);
+      }
+
+      27% {
+          transform: rotate(-12deg);
+      }
+
+      29% {
+          transform: rotate(10deg);
+      }
+
+      31% {
+          transform: rotate(-8deg);
+      }
+
+      33% {
+          transform: rotate(6deg);
+      }
+
+      35% {
+          transform: rotate(-4deg);
+      }
+
+      37% {
+          transform: rotate(2deg);
+      }
+
+      39% {
+          transform: rotate(-1deg);
+      }
+
+      41% {
+          transform: rotate(1deg);
+      }
+
+      43% {
+          transform: rotate(0);
+      }
+
+      100% {
+          transform: rotate(0);
+      }
+  }
